@@ -1,0 +1,10 @@
+name: shiny
+title:
+username:
+account: mheisu
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 356247
+bundleId: 1430363
+url: https://mheisu.shinyapps.io/shiny/
+when: 1529011825.87822
