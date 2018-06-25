@@ -2,7 +2,6 @@ fluidPage(
   tags$head(includeScript("google-analytics.js")),
   navbarPage("C-REx",
              tabPanel("About",
-                      p("test icon"),
                       img(src = "icon.png", width=600,height=450),
                       h2('Purpose'),
                       br(),
