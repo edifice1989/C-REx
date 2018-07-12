@@ -91,12 +91,12 @@ fluidPage(
                       h3("Data used in the paper:"),
                       downloadButton("downloadData3", label = "Download Gramene-UV-stress.csv"),
                       downloadButton("downloadData4", label = "Download maize-GAMER-UV-stress.csv"),
-                      downloadButton("downloadData4", label = "Download Gramene-non-stress.csv"),
-                      downloadButton("downloadData5", label = "Download maize-GAMER-non-stress.csv"),
-                      downloadButton("downloadData6", label = "Gramene-non-stress-biological-replicate-1.csv"),
-                      downloadButton("downloadData7", label = "Gramene-non-stress-biological-replicate-2.csv"),
-                      downloadButton("downloadData8", label = "maize-GAMER-non-stress-biological-replicate-1.csv"),
-                      downloadButton("downloadData9", label = "maize-GAMER-non-stress-biological-replicate-2.csv")
+                      downloadButton("downloadData5", label = "Download Gramene-non-stress.csv"),
+                      downloadButton("downloadData6", label = "Download maize-GAMER-non-stress.csv"),
+                      downloadButton("downloadData7", label = "Gramene-non-stress-biological-replicate-1.csv"),
+                      downloadButton("downloadData8", label = "Gramene-non-stress-biological-replicate-2.csv"),
+                      downloadButton("downloadData9", label = "maize-GAMER-non-stress-biological-replicate-1.csv"),
+                      downloadButton("downloadData10", label = "maize-GAMER-non-stress-biological-replicate-2.csv")
              ),
              tabPanel("Within sample comparison",
                       sidebarLayout(

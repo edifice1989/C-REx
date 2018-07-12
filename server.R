@@ -24,6 +24,46 @@ library("ggplot2")
         write.table(data2, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    output$downloadData3 <- downloadHandler(
+      filename = function() {
+        paste("Gramene-UV-stress", ".csv", sep="")
+      }
+    )
+    output$downloadData4 <- downloadHandler(
+      filename = function() {
+        paste("maize-GAMER-UV-stress", ".csv", sep="")
+      }
+    )
+    output$downloadData5 <- downloadHandler(
+      filename = function() {
+        paste("Gramene-non-stress", ".csv", sep="")
+      }
+    )
+    output$downloadData6 <- downloadHandler(
+      filename = function() {
+        paste("maize-GAMER-non-stress", ".csv", sep="")
+      }
+    )
+    output$downloadData7 <- downloadHandler(
+      filename = function() {
+        paste("Gramene-non-stress-biological-replicate-1", ".csv", sep="")
+      }
+    )
+    output$downloadData8 <- downloadHandler(
+      filename = function() {
+        paste("Gramene-non-stress-biological-replicate-2", ".csv", sep="")
+      }
+    )
+    output$downloadData9 <- downloadHandler(
+      filename = function() {
+        paste("maize-GAMER-non-stress-biological-replicate-1", ".csv", sep="")
+      }
+    )
+    output$downloadData10 <- downloadHandler(
+      filename = function() {
+        paste("maize-GAMER-non-stress-biological-replicate-2", ".csv", sep="")
+      }
+    )
     observeEvent(input$submit,
       {
         withProgress(message = 'Reading data in progress',
