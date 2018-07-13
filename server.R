@@ -26,7 +26,7 @@ library("ggplot2")
     )
     
 ######## aditional test data ###########
-    data3 <- read.csv("./Gramene-UV-stress.csv",header=FALSE)
+    data3 <- read.csv("./Data/Gramene-UV-stress.csv",header=FALSE)
     output$downloadData3 <- downloadHandler(
       filename = function() {
         paste("Gramene-UV-stress", ".csv", sep="")
@@ -36,7 +36,7 @@ library("ggplot2")
       }
     )
     
-    data4 <- read.csv("./maize-GAMER-UV-stress.csv",header=FALSE)
+    data4 <- read.csv("./Data/maize-GAMER-UV-stress.csv",header=FALSE)
     output$downloadData4 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-UV-stress", ".csv", sep="")
@@ -46,7 +46,7 @@ library("ggplot2")
       }
     )
     
-    data5 <- read.csv("./Gramene-non-stress.csv",header=FALSE)
+    data5 <- read.csv("./Data/Gramene-non-stress.csv",header=FALSE)
     output$downloadData5 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress", ".csv", sep="")
@@ -56,7 +56,7 @@ library("ggplot2")
       }
     )
     
-    data6 <- read.csv("./maize-GAMER-non-stress.csv",header=FALSE)
+    data6 <- read.csv("./Data/maize-GAMER-non-stress.csv",header=FALSE)
     output$downloadData6 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress", ".csv", sep="")
@@ -66,7 +66,7 @@ library("ggplot2")
       }
     )
     
-    data7 <- read.csv("./Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
+    data7 <- read.csv("./Data/Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
     output$downloadData7 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress-biological-replicate-1", ".csv", sep="")
@@ -76,7 +76,7 @@ library("ggplot2")
       }
     )
     
-    data8 <- read.csv("./Gramene-non-stress-biological-replicate-2.csv",header=FALSE)
+    data8 <- read.csv("./Data/Gramene-non-stress-biological-replicate-2.csv",header=FALSE)
     output$downloadData8 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress-biological-replicate-2", ".csv", sep="")
@@ -86,7 +86,7 @@ library("ggplot2")
       }
     )
     
-    data9 <- read.csv("./Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
+    data9 <- read.csv("./Data/Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
     output$downloadData9 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress-biological-replicate-1", ".csv", sep="")
@@ -96,7 +96,7 @@ library("ggplot2")
       }
     )
     
-    data10 <- read.csv("./maize-GAMER-non-stress-biological-replicate-2.csv",header=FALSE)
+    data10 <- read.csv("./Data/maize-GAMER-non-stress-biological-replicate-2.csv",header=FALSE)
     output$downloadData10 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress-biological-replicate-2", ".csv", sep="")
