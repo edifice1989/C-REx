@@ -88,15 +88,16 @@ fluidPage(
                       p(" AC149818.2_FG001,188.42990159969,housekeeping genes"),
                       p("-If you are comparing the same group of genes under two conditions, genes with TPM or FPKM values smaller than 1 in both condition should be removed. Usually such small measurement is not reliable."),
                       p("-Also, please use the gene group label 'housekeeping genes' to annotate housekeeping genes, some bad examples would be Housekeeping Genes, housekeeping, HOUSEKEEPING..."),
-                      h3("Data used in the paper:"),
+                      h3("Additional test data:"),
+                      p("Those files also used in publication"),
                       downloadButton("downloadData3", label = "Download Gramene-UV-stress.csv"),
                       downloadButton("downloadData4", label = "Download maize-GAMER-UV-stress.csv"),
                       downloadButton("downloadData5", label = "Download Gramene-non-stress.csv"),
                       downloadButton("downloadData6", label = "Download maize-GAMER-non-stress.csv"),
-                      downloadButton("downloadData7", label = "Gramene-non-stress-biological-replicate-1.csv"),
-                      downloadButton("downloadData8", label = "Gramene-non-stress-biological-replicate-2.csv"),
-                      downloadButton("downloadData9", label = "maize-GAMER-non-stress-biological-replicate-1.csv"),
-                      downloadButton("downloadData10", label = "maize-GAMER-non-stress-biological-replicate-2.csv")
+                      downloadButton("downloadData7", label = "Download Gramene-non-stress-biological-replicate-1.csv"),
+                      downloadButton("downloadData8", label = "Download Gramene-non-stress-biological-replicate-2.csv"),
+                      downloadButton("downloadData9", label = "Download maize-GAMER-non-stress-biological-replicate-1.csv"),
+                      downloadButton("downloadData10", label = "Download maize-GAMER-non-stress-biological-replicate-2.csv")
              ),
              tabPanel("Within sample comparison",
                       sidebarLayout(
