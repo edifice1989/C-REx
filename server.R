@@ -24,46 +24,89 @@ library("ggplot2")
         write.table(data2, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+######## aditional test data ###########
+    data3 <- read.csv("./Gramene-UV-stress.csv",header=FALSE)
     output$downloadData3 <- downloadHandler(
       filename = function() {
         paste("Gramene-UV-stress", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data3, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data4 <- read.csv("./maize-GAMER-UV-stress.csv",header=FALSE)
     output$downloadData4 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-UV-stress", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data4, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data5 <- read.csv("./Gramene-non-stress.csv",header=FALSE)
     output$downloadData5 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data5, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data6 <- read.csv("./maize-GAMER-non-stress.csv",header=FALSE)
     output$downloadData6 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data6, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data7 <- read.csv("./Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
     output$downloadData7 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress-biological-replicate-1", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data7, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data8 <- read.csv("./Gramene-non-stress-biological-replicate-2.csv",header=FALSE)
     output$downloadData8 <- downloadHandler(
       filename = function() {
         paste("Gramene-non-stress-biological-replicate-2", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data8, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data9 <- read.csv("./Gramene-non-stress-biological-replicate-1.csv",header=FALSE)
     output$downloadData9 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress-biological-replicate-1", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data9, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+    data10 <- read.csv("./maize-GAMER-non-stress-biological-replicate-2.csv",header=FALSE)
     output$downloadData10 <- downloadHandler(
       filename = function() {
         paste("maize-GAMER-non-stress-biological-replicate-2", ".csv", sep="")
+      },
+      content = function(filename) {
+        write.table(data10, filename, sep=",",  col.names=FALSE,row.names = F,quote=F)
       }
     )
+    
+######################################## submit user data #################
     observeEvent(input$submit,
       {
         withProgress(message = 'Reading data in progress',
