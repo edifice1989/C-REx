@@ -207,8 +207,7 @@ library("ggplot2")
                      normal_mean <- mean(log(normal_hk[, 2] + 1))
                      
                      p<-t.test(log(sub1[, 2] + 1) / normal_mean,
-                            log(sub2[, 2] + 1) / normal_mean,
-                            paired = FALSE)$p.value
+                            log(sub2[, 2] + 1) / normal_mean)$p.value
                      if(p>=0.05)
                      {
                        result<-p
@@ -440,7 +439,7 @@ library("ggplot2")
       normal_mean_1 <- mean(log(normal_hk_1[, 2] + 1))
       normal_mean_2 <- mean(log(normal_hk_2[, 2] + 1))
       # paired t-test is over powerful to distinguish small random changes even between biological replicates
-      p<-t.test(log(sub2_1[,2]+1)/normal_mean_1,log(sub2_2[,2]+1)/normal_mean_2,paired=FALSE)$p.value
+      p<-t.test(log(sub2_1[,2]+1)/normal_mean_1,log(sub2_2[,2]+1)/normal_mean_2)$p.value
       if(p>=0.05)
       {
         result<-p
