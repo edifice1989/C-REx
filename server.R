@@ -143,7 +143,7 @@ library("ggplot2")
                      normal_hk <-
                        subset(f, f[, 3] == "housekeeping genes")
                      normal_mean <- mean(log(normal_hk[, 2] + 1))
-                     ggplot(all, aes(log10(RNA+1) / normal_mean,color=group)) +
+                     ggplot(all, aes(log(RNA+1) / normal_mean,color=group)) +
                        geom_density(alpha = 0.5) + theme(axis.text = element_text(size =
                                                                                     20),
                                                          axis.title = element_text(size = 20),
