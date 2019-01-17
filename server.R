@@ -326,13 +326,13 @@ library("ggplot2")
       info$data3<-f
     })
     observeEvent(input$submitexam2, {
-      data2 <- read.csv("./Data/hsf_vs_all_tf.csv",header=FALSE)
+      data2 <- read.csv("./Data/maize-GAMER-UV-stress.csv",header=FALSE)
       colnames(data2) <- c("gene", "RNA", "group")
       # Update select input immediately after clicking on the action button.
       updateSelectInput(session, "group2_1", "Select Gene Group 1", choices = data2$group)
       info$data2<-data2
       
-      data3 <- read.csv("./Data/hsf_vs_all_tf_normal.csv",header=FALSE)
+      data3 <- read.csv("./Data/maize-GAMER-non-stress.csv",header=FALSE)
       colnames(data3) <- c("gene", "RNA", "group")
 #       Update select input immediately after clicking on the action button.
       updateSelectInput(session, "group2_2", "Select Gene Group 2", choices = data3$group)
@@ -491,7 +491,7 @@ library("ggplot2")
         subset(f2, f2[, 3] == "housekeeping genes")
       normal_mean_1 <- mean(log(normal_hk_1[,2] + 1))
       normal_mean_2 <- mean(log(normal_hk_2[,2] + 1))
-      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2)$p.value
+      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2,paired=True)$p.value
       if(p>=0.05)
       {
         result<-p
