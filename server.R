@@ -491,7 +491,7 @@ library("ggplot2")
         subset(f2, f2[, 3] == "housekeeping genes")
       normal_mean_1 <- mean(log(normal_hk_1[,2] + 1))
       normal_mean_2 <- mean(log(normal_hk_2[,2] + 1))
-      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2,paired=True)$p.value
+      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2,paired=TRUE)$p.value
       if(p>=0.05)
       {
         result<-p
