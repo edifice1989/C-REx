@@ -257,7 +257,7 @@ library("ggplot2")
     })
     output$wilcox<-renderText({
       if (is.null(info$data1)) return()
-      withProgress(message = 'Wilcoxon signed-rank test in progress',
+      withProgress(message = 'Wilcoxon rank-sum test in progress',
                    detail = 'This may take a while...',
                    value = 1,
                    {
@@ -266,15 +266,7 @@ library("ggplot2")
       sub2<-subset(f,f[,3]==input$group2)
       normal_hk<-subset(f, f[, 3] == "housekeeping genes")
       normal_mean <- mean(log(normal_hk[, 2] + 1))
-      if(nrow(sub1) ==nrow(sub2))
-      {
-        num1<-TRUE
-      }
-      if(nrow(sub1) !=nrow(sub2))
-      {
-        num1<-FALSE
-      }
-      p<-wilcox.test(log(sub1[,2]+1)/normal_mean, log(sub2[,2]+1)/normal_mean)$p.value
+      p<-wilcox.test(log(sub1[,2]+1)/normal_mean, log(sub2[,2]+1)/normal_mean,paired = FALSE)$p.value
       if(p>=0.05)
       {
         result<-p
@@ -499,7 +491,47 @@ library("ggplot2")
         subset(f2, f2[, 3] == "housekeeping genes")
       normal_mean_1 <- mean(log(normal_hk_1[,2] + 1))
       normal_mean_2 <- mean(log(normal_hk_2[,2] + 1))
-      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2)$p.value
+      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2,paired = TRUE)$p.value
+      if(p>=0.05)
+      {
+        result<-p
+      }
+      
+      if(p<0.05 && p>=0.01)
+      {
+        result<-"p<0.05"
+      }
+      
+      if(p<0.01 && p>=0.001)
+      {
+        result<-"p<0.01"
+      }
+      
+      if(p<0.001 && p>=0.0001)
+      {
+        result<-"p<0.001"
+      }
+      
+      if(p<0.0001)
+      {
+        result<-"p<0.0001"
+      }
+      result
+      
+    })
+    output$wilcox3<-renderText({
+      if (is.null(info$data2)) return()
+      f1 <- info$data2
+      sub2_1<-subset(f1,f1[,3]==input$group2_1)
+      f2 <- info$data3
+      sub2_2<-subset(f2,f2[,3]==input$group2_2)
+      normal_hk_1 <-
+        subset(f1, f1[, 3] == "housekeeping genes")
+      normal_hk_2 <-
+        subset(f2, f2[, 3] == "housekeeping genes")
+      normal_mean_1 <- mean(log(normal_hk_1[,2] + 1))
+      normal_mean_2 <- mean(log(normal_hk_2[,2] + 1))
+      p<-wilcox.test(log(sub2_1[,2]+1)/normal_mean_1, log(sub2_2[,2]+1)/normal_mean_2,paired = FALSE)$p.value
       if(p>=0.05)
       {
         result<-p

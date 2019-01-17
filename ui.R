@@ -172,16 +172,16 @@ fluidPage(
                                                      verbatimTextOutput("ttest"),
                                                      p("A low P value (e.g., <0.05) suggests that your sample provides enough evidence that you can reject the null hypothesis.")
                                                      ))),
-                            tabPanel("Wilcoxon signed-rank test",
+                            tabPanel("Wilcoxon rank-sum test",
                                      fluidRow(column(8, offset = 1,
                                                      h2("About this test"),
                                                      p("This non-parametric test is less powerfull than parametric tests (including the t-test). It is used when data do not follow the normal distribution.
                                                         However, it could be an alternative when the log-transformed data distribution fails to meet normality requirement.
                                                         This test is also called Mann–Whitney U test, and Mann–Whitney–Wilcoxon (MWW)."),
-                                                     h2("Hypothesis of the Wilcoxon signed-rank test"),
+                                                     h2("Hypothesis of the Wilcoxon rank-sum test"),
                                                      p("The null hypothesis is that it is equally likely that a randomly selected value from one sample will
                                                         be less than or greater than a randomly selected value from a second sample. Note, we use two-sided test here as default."),
-                                                     p("P-value from Wilcoxon signed-rank test"),
+                                                     p("P-value from Wilcoxon rank-sum test"),
                                                      verbatimTextOutput("wilcox"),
                                                      p("A low P value (e.g., <0.05) suggests that your sample provides enough evidence that you can reject the null hypothesis."))))
                             )
@@ -266,17 +266,27 @@ tabPanel("Between sample comparison",
                                         verbatimTextOutput("ttest2"),
                                         p("A low P value (e.g., <0.05) suggests that your sample provides enough evidence that you can reject the null hypothesis.")
                                         ))),
-               tabPanel("Wilcoxon signed-rank test",
+               tabPanel("Wilcoxon signed-rank test (same gene group across samples)",
                         fluidRow(column(8, offset = 1,
                                         h2("About this test"),
-                                        p("This non-parametric test is a less powerfull than parametric tests (including the t-test). It is used when data do not follow the normal distribution.
-                                          However, it could be an alternative when the log-transformed data distribution fails to meet normality requirement.
-                                          This test is also called the Mann–Whitney U test, and Mann–Whitney–Wilcoxon (MWW)."),
+                                        p("This non-parametric test is a less powerfull than parametric tests (including the t-test). It is used when data do not follow the normal distribution or sample size is too small to tell.
+                                          However, it could be an alternative when the log-transformed data distribution fails to meet normality requirement."),
                                         h2("Hypothesis of the Wilcoxon signed-rank test"),
-                                        p("The null hypothesis is that it is equally likely that a randomly selected value from one sample will
-                                          be less than or greater than a randomly selected value from a second sample. Note, we use two-sided test here as default."),
+                                        p("compare two related samples, matched samples, or repeated measurements on a single sample to assess whether their population mean ranks differ"),
                                         p("P-value from Wilcoxon signed-rank test:"),
                                         verbatimTextOutput("wilcox2"),
+                                        p("A low P value (e.g., <0.05) suggests that your sample provides enough evidence that you can reject the null hypothesis.")))),
+               tabPanel("Wilcoxon rank-sum test (different gene groups)",
+                        fluidRow(column(8, offset = 1,
+                                        h2("About this test"),
+                                        p("This non-parametric test is less powerfull than parametric tests (including the t-test). It is used when data do not follow the normal distribution.
+                                          However, it could be an alternative when the log-transformed data distribution fails to meet normality requirement.
+                                          This test is also called Mann–Whitney U test, and Mann–Whitney–Wilcoxon (MWW)."),
+                                        h2("Hypothesis of the Wilcoxon rank-sum test"),
+                                        p("The null hypothesis is that it is equally likely that a randomly selected value from one sample will
+                                          be less than or greater than a randomly selected value from a second sample. Note, we use two-sided test here as default."),
+                                        p("P-value from Wilcoxon rank-sum test"),
+                                        verbatimTextOutput("wilcox3"),
                                         p("A low P value (e.g., <0.05) suggests that your sample provides enough evidence that you can reject the null hypothesis."))))
            )
              )
