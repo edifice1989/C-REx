@@ -110,7 +110,7 @@ fluidPage(
                       sidebarLayout(
                         sidebarPanel(
                           titlePanel("Use Example Data"),
-                          actionButton("submitexam1", "Apply example 1 input file"),
+                          actionButton("submitexam1", "Apply heat stress RNA-seq sample"),
                           titlePanel("Or Upload Your Own Input Data"),
                           # Inputs excluded for brevity
                           fileInput("file", "Choose CSV File",
@@ -192,7 +192,7 @@ tabPanel("Between sample comparison",
          sidebarLayout(
            sidebarPanel(
              titlePanel("Use Example Data"),
-             actionButton("submitexam2", "Apply example 1 and 2 input files"),
+             actionButton("submitexam2", "Apply UV stress and non-stressed RNA-seq samples"),
              titlePanel("Or Upload Your Own Input Data"),
              fileInput("file2_1", "Choose CSV File 1",
                        multiple = TRUE,
