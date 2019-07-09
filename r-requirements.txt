@@ -1,0 +1,10 @@
+DT
+tidyverse
+shinythemes
+plotly
+shinyjs
+rsconnect
+shinycssloaders
+V8
+sqldf
+ggplot
