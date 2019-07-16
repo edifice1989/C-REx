@@ -190,7 +190,7 @@ tabPanel("Between sample comparison",
              ),
 tabPanel("About",
 br(),
-img(src = "icon.png", width=600,height=450),
+img(src = "icon.png"),
 h2('Purpose'),
 br(),
 p(
